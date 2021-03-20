@@ -56,7 +56,7 @@ public class MongoDAO {
 
     public static List<Product> getAllProducts(){
         ArrayList<Product> products = new ArrayList<>();
-        MongoCollection<Document> collection = MongoDAO.getCollection(CollectionNames.Products.name());
+        MongoCollection<Document> collection = getCollection(CollectionNames.Products.name());
         MongoCursor<Document> cursor = collection.find().cursor();
         while(cursor.hasNext()){
             Document document = cursor.next();
@@ -68,7 +68,7 @@ public class MongoDAO {
 
     public static List<Inventory> getAllInventory(){
         ArrayList<Inventory> allInventory = new ArrayList<>();
-        MongoCollection<Document> collection = MongoDAO.getCollection(CollectionNames.Inventory.name());
+        MongoCollection<Document> collection = getCollection(CollectionNames.Inventory.name());
         MongoCursor<Document> cursor = collection.find().cursor();
         while(cursor.hasNext()){
             Document document = cursor.next();
@@ -84,7 +84,7 @@ public class MongoDAO {
     }
 
     public static Product getProduct(ObjectId id){
-        MongoCollection<Document> collection = MongoDAO.getCollection(CollectionNames.Products.name());
+        MongoCollection<Document> collection = getCollection(CollectionNames.Products.name());
         BsonDocument query = new BsonDocument();
         query.append("_id", new BsonObjectId(id));
         MongoCursor<Document> cursor = collection.find(query).cursor();
