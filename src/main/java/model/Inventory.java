@@ -11,10 +11,11 @@ public class Inventory{
     private Product product;
     private int inStock;
 
-    public Inventory(ObjectId id, ObjectId productId, int inStock) {
+    public Inventory(ObjectId id, ObjectId productId, int inStock, Product product) {
         this.id = id;
         this.productId = productId;
         this.inStock = inStock;
+        this.product = product;
     }
     public Inventory(){
     }
@@ -23,6 +24,7 @@ public class Inventory{
         this.id = (ObjectId) document.get("_id");
         this.productId = (ObjectId) document.get("productId");
         this.inStock = (int) document.get("inStock");
+        this.product = MongoDAO.getAllProducts().stream().filter(product1 -> product1.getId().equals(productId)).findFirst().get();
     }
 
     public Document toDocument() {
@@ -56,6 +58,10 @@ public class Inventory{
         this.inStock = inStock;
     }
 
+    public void addStock(int newStock) {
+        this.inStock += newStock;
+    }
+
     public Product getProduct() {
         return product;
     }
@@ -63,4 +69,11 @@ public class Inventory{
     public void setProduct(Product product) {
         this.product = product;
     }
+
+
+    @Override
+    public String toString() {
+        return product.getName() + " - Cantidad : " + inStock;
+    }
+
 }

@@ -22,12 +22,6 @@ import java.util.ResourceBundle;
 public class ProductsView implements Initializable {
 
     @FXML
-    private AnchorPane anchor;
-
-    @FXML
-    private Label search_label;
-
-    @FXML
     private TableView<Product> productTableView;
 
     @FXML
@@ -101,7 +95,5 @@ public class ProductsView implements Initializable {
 
         // 5. Add sorted (and filtered) data to the table.
         productTableView.setItems(sortedData);
-
-
     }
 }

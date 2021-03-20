@@ -1,4 +1,4 @@
-package source;
+package utility;
 
 import model.MongoDAO;
 import model.Product;
