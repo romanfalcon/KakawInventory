@@ -2,17 +2,13 @@ package view;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.collections.transformation.FilteredList;
-import javafx.collections.transformation.SortedList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import model.Inventory;
 import model.MongoDAO;
-import model.Product;
 
-import java.beans.EventHandler;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;

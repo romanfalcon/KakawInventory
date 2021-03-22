@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="581.0" prefWidth="1018.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.AddInventoryView">
+   <children>
+      <TableView fx:id="cartTable" editable="true" layoutX="541.0" layoutY="138.0" prefHeight="274.0" prefWidth="402.0">
+        <columns>
+          <TableColumn fx:id="productColumn" editable="false" prefWidth="206.0" text="Producto" />
+          <TableColumn fx:id="quantityColumn" prefWidth="195.0" text="Cantidad" />
+        </columns>
+      </TableView>
+      <Label layoutX="725.0" layoutY="100.0" prefHeight="25.0" prefWidth="35.0" text="ADD">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Button fx:id="doneButton" layoutX="721.0" layoutY="424.0" mnemonicParsing="false" text="Done" />
+      <TextField fx:id="productFilter" layoutX="143.0" layoutY="113.0" />
+      <ListView fx:id="productList" layoutX="93.0" layoutY="191.0" prefHeight="237.0" prefWidth="301.0" />
+      <Label layoutX="180.0" layoutY="75.0" prefHeight="25.0" prefWidth="127.0" text="Productos" textAlignment="CENTER">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
